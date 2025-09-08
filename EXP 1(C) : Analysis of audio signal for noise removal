@@ -1,15 +1,31 @@
 # EXP 1(C) : Analysis of audio signal for noise removal
 
 # AIM: 
-
-# To analyse an audio signal and remove noise
+ To analyse an audio signal and remove noise
 
 # APPARATUS REQUIRED:  
 PC installed with SCILAB. 
 
 # PROGRAM: 
+// Load audio
+[x, fs] = wavread("C:\Users\acer\Downloads\waptt");
 
+// Number of samples to cut (2 seconds)
+cut_samples = round(2 * fs);
 
-// DISCRETE FOURIER TRANSFORM 
+// Remove first 2 seconds
+y = x(cut_samples+1:$);
+
+// Play original
+disp("Playing Original...");
+playsnd(x, fs);
+
+// Play trimmed audio
+disp("Playing Audio without first 2s...");
+playsnd(y, fs);
+
+// Save the trimmed audio
+wavwrite(y, fs, "C:\Users\acer\Downloads\waptt2_trimmed");
 
 # RESULT: 
+  Analysis of audio signal for noise removal was removed.
