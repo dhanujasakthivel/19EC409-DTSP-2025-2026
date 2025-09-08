@@ -23,7 +23,8 @@ PROGRAM:
 subplot(2,1,2); plot(f, atan(imag(Y), real(Y))); // Phase xlabel("Frequency (Hz)"); ylabel("Phase (radians)"); title("Phase Spectrum of Audio Signal");
 
 OUTPUT:
-https://github.com/user-attachments/assets/3365d186-8cca-4f81-93c3-e15a808bb65f
+![WhatsApp Image 2025-09-08 at 15 43 50_f377f0b6](https://github.com/user-attachments/assets/03c6dfde-21a5-425b-99e3-30701540702a)
+
 
 
 RESULTS
