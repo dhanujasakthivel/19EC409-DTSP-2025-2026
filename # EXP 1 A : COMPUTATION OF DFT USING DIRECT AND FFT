@@ -29,14 +29,17 @@ end
 // Frequency axis (normalized)
 f = (0:N-1) / N;
 
-// Plot magnitude spectrum
-plot(f, abs(X));
-xlabel("Normalized Frequency");
-ylabel("Magnitude");
-title("Discrete Fourier Transform )");
+// Plot magnitude and phase spectrum
+subplot(2,1,1);
+plot2d3(f, abs(X));
+xtitle("Magnitude Spectrum of DFT");
+
+subplot(2,1,2);
+plot2d3(f, atan(imag(X), real(X))); // atan2 for phase
+xtitle("Phase Spectrum of DFT");
 
 # OUTPUT: 
-https://cdn.corenexis.com/view/6157872168
+https://cdn.corenexis.com/view/6383461168
 
 # RESULT: 
 DFT and FFT of a given sequence in SCILAB was obtained 
