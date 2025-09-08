@@ -1,16 +1,46 @@
-# EXP 1 A : COMPUTATION OF DFT USING DIRECT AND FFT
+EXP 1 A : 
+COMPUTATION OF DFT USING DIRECT AND FFT
 
-# AIM: 
+AIM:
+To Obtain DFT and FFT of a given sequence in SCILAB. 
 
-# To Obtain DFT and FFT of a given sequence in SCILAB. 
-
-# APPARATUS REQUIRED: 
+APPARATUS REQUIRED: 
 PC installed with SCILAB. 
 
-# PROGRAM: 
+PROGRAM: 
 // DISCRETE FOURIER TRANSFORM 
+clc;
+clear;
 
-# OUTPUT: 
+// Take input discrete signal
+x = input("Enter discrete signal as [x1 x2 ...]: ");
+N = length(x);
+
+// Initialize DFT output
+X = zeros(1, N);
+
+// DFT calculation using formula
+for k = 0:N-1
+    for n = 0:N-1
+        X(k+1) = X(k+1) + x(n+1) * exp(-%i * 2 * %pi * k * n / N);
+    end
+end
+
+// Frequency axis (normalized)
+f = (0:N-1) / N;
+
+// Plot magnitude and phase spectrum
+subplot(2,1,1);
+plot2d3(f, abs(X));
+xtitle("Magnitude Spectrum of DFT");
+
+subplot(2,1,2);
+plot2d3(f, atan(imag(X), real(X))); // atan2 for phase
+xtitle("Phase Spectrum of DFT");
+
+
+# OUTPUT: https://cdn.corenexis.com/view/6383461168
 
 
 # RESULT: 
+DFT and FFT of a given sequence in SCILAB is obtained
