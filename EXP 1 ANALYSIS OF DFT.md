@@ -6,6 +6,7 @@ APPARATUS REQUIRED:
 PC installed with SCILAB/Python.
 
 PROGRAM:
+```
 // analyze audio signal clc; clear;
 
 // ---- Step 1: Load audio file ---- // Make sure the file exists in the given path [x, fs, bits] = wavread("C:\Users\acer\Downloads\waptt.wav");
@@ -21,7 +22,7 @@ PROGRAM:
 // ---- Step 5: Plot magnitude & phase ---- clf(); subplot(2,1,1); plot(f, abs(Y)); xlabel("Frequency (Hz)"); ylabel("Magnitude"); title("Magnitude Spectrum of Audio Signal");
 
 subplot(2,1,2); plot(f, atan(imag(Y), real(Y))); // Phase xlabel("Frequency (Hz)"); ylabel("Phase (radians)"); title("Phase Spectrum of Audio Signal");
-
+```
 OUTPUT:
 ![WhatsApp Image 2025-09-08 at 15 43 50_f377f0b6](https://github.com/user-attachments/assets/03c6dfde-21a5-425b-99e3-30701540702a)
 
